@@ -8,7 +8,7 @@ async function query(queryObject) {
     const result = await client.query(queryObject);
     return result;
   } catch (error) {
-    console.error("error: 'Method /Delete\\ not allowed'");
+    console.error(error);
     throw error;
   } finally {
     await client.end();
