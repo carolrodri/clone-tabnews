@@ -17,8 +17,7 @@ async function query(queryObject) {
 
 async function getNewClient(queryObject) {
   const client = new Client({
-    connectionString:
-      "postgresql://neondb_owner:npg_RToH3ZGjYux9@ep-holy-bar-a4uam9es-pooler.us-east-1.aws.neon.tech/staging?sslmode=require&channel_binding=require",
+    connectionString: process.env.POSTGRES_URL,
   });
   await client.connect();
   return client;
