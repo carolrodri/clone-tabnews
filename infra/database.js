@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Client } from "pg";
 
 async function query(queryObject) {
@@ -23,7 +24,9 @@ async function getNewClient(queryObject) {
   return client;
 }
 
-export default {
+const database = {
   query,
   getNewClient,
 };
+
+export default database;
