@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Client } from "pg";
 
 async function query(queryObject) {
