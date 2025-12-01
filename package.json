@@ -4,7 +4,7 @@
   "description": "Projeto para aprender a programar",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run services:up && npm run services:wait:database && npm run migrations:up && next dev",
+    "dev": "npm run services:up && npm run services:wait:database && next dev",
     "test": "npm run services:up && npm run migrations:up && concurrently --names \"next,jest\" --hide next --kill-others --success command-jest \"npm:dev:test\" \"npm:test:run\" --verbose",
     "posttest": "npm run services:stop",
     "test:run": "wait-on http://localhost:3000 && dotenv -e .env.development -- jest --runInBand",
