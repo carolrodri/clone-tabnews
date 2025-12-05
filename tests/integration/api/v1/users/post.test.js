@@ -33,12 +33,12 @@ describe("POST /api/v1/users", () => {
         email: "carolrodri@email.com",
         password: "senha123",
         created_at: responseBody.created_at,
-        update_at: responseBody.update_at,
+        updated_at: responseBody.updated_at,
       });
 
       expect(uuidVersion(responseBody.id)).toBe(4);
       expect(Date.parse(responseBody.created_at)).not.toBeNaN();
-      expect(Date.parse(responseBody.update_at)).not.toBeNaN();
+      expect(Date.parse(responseBody.updated_at)).not.toBeNaN();
     });
 
     test("With duplicated 'email'", async () => {
