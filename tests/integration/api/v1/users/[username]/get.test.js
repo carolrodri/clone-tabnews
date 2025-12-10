@@ -39,12 +39,12 @@ describe("GET /api/v1/users/[username]", () => {
         email: "mesmo.case@email.com",
         password: response2Body.password,
         created_at: response2Body.created_at,
-        update_at: response2Body.update_at,
+        updated_at: response2Body.updated_at,
       });
 
       expect(uuidVersion(response2Body.id)).toBe(4);
       expect(Date.parse(response2Body.created_at)).not.toBeNaN();
-      expect(Date.parse(response2Body.update_at)).not.toBeNaN();
+      expect(Date.parse(response2Body.updated_at)).not.toBeNaN();
     });
 
     test("With case mismatch", async () => {
@@ -76,12 +76,12 @@ describe("GET /api/v1/users/[username]", () => {
         email: "case.diferente@email.com",
         password: response2Body.password,
         created_at: response2Body.created_at,
-        update_at: response2Body.update_at,
+        updated_at: response2Body.updated_at,
       });
 
       expect(uuidVersion(response2Body.id)).toBe(4);
       expect(Date.parse(response2Body.created_at)).not.toBeNaN();
-      expect(Date.parse(response2Body.update_at)).not.toBeNaN();
+      expect(Date.parse(response2Body.updated_at)).not.toBeNaN();
     });
 
     test("With nonexistent username", async () => {
